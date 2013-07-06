@@ -1,0 +1,63 @@
+{
+  "sha": "8b504df91b628ae1713ce76247ef4e9954a21961",
+  "sources": {
+    "tennis-mysql": {
+      "locked_version": "0.1.0",
+      "git": "git@github.com:ZG-Tennis/cookbook-tennis-mysql.git",
+      "ref": "2f8a2588af7b27860ec8dc61547cd8234bcb0744"
+    },
+    "github": {
+      "locked_version": "0.1.0",
+      "git": "git@github.com:duro/cookbook-github.git",
+      "ref": "ff0602fded70473436c9bf96f25323a5e812bfe7"
+    },
+    "tennis-ace": {
+      "path": "."
+    },
+    "mysql": {
+      "locked_version": "3.0.0"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    },
+    "hostsfile": {
+      "locked_version": "1.0.1"
+    },
+    "apt": {
+      "locked_version": "1.9.2"
+    },
+    "application": {
+      "locked_version": "2.0.2"
+    },
+    "application_python": {
+      "locked_version": "1.2.2"
+    },
+    "python": {
+      "locked_version": "1.3.4"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "gunicorn": {
+      "locked_version": "1.1.0"
+    },
+    "supervisor": {
+      "locked_version": "0.4.2"
+    },
+    "database": {
+      "locked_version": "1.4.0"
+    },
+    "postgresql": {
+      "locked_version": "3.0.2"
+    },
+    "aws": {
+      "locked_version": "0.101.2"
+    },
+    "xfs": {
+      "locked_version": "1.1.0"
+    }
+  }
+}
