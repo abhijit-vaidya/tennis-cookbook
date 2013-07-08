@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
 
   # Enable the Chef Omnibus plugin
-  #config.omnibus.chef_version = "11.4.4"
+  config.omnibus.chef_version = "11.4.4"
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {

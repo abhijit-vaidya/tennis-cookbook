@@ -43,3 +43,23 @@ default["tennis"]["static"]["repo"]["url"]                     = "git@github.com
 default["tennis"]["static"]["repo"]["branch"]                  = "dev"
 default["tennis"]["static"]["repo"]["deploy_key"]              = "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAy6FS4IX9FtusKGWzdx9uexMiWA5aTckwFpHmjKmuasKgndKU\npea1bnoyYWvzRcCdG2o+HKRJfljlbX69rXY8K6+It59/VLACemmRVfX119nz/nOw\nwTeA5kAv23tCKbEi2Q7vCN6ro3xiCyejEPrGOvK+r7qzzUxwyTYPFwSqpXwU2SyQ\nX3ek2CuOkiJsmziElUwCFXOWob/5/uDdJ1bx/Ta9OcdsDfSesvQlSpnt6sHBiNAz\ne28eEGIcebFSp40KUUQwWjjOnuE0khhkM2y7Fbzwji2NDdnmpnkgm5v36uvFHCHb\nA6STlIGm912ZCEhGu8Ce3ZHGXIJ5E7ZDIvhYmwIDAQABAoIBAQCpyNVFh/LCwF8H\nP+UnifmgfQ/BxBXfjcSezQAigMiBE87ASPjQa1ET0Kd5O30Xx8Y3OZqYXxM4Wf7S\nET8uBsuc0Tt5f2+3uRoX3zXjKrXVSFF89BGIyTKcySAeLOO5x4x610zPZHpQUkGd\nc2svmSj3tbbw5wdMQlQ4MO7cDnQKjbHrfHmKcm3nUeAu44fci3VCnDbahh3Hwwcl\nMjfgDHYT8XRWaZbInb+bDGD1y8l0hv6YoqWVTzInZb1s2mn28czfe67Uo25mqTZS\n37d2f+qImnKwv9CvbqGfH6S9O5pDa4pnK0A1qJ4OrXiPkQigaG9PfqUrA7Gs2Kjg\nxEFEbZihAoGBAO5dX0M1kat1eCVW57hGuujhq3xJ6n8+11Yd9E/pHRUgLBilFtHB\nEuLtcStMLIwaMNr1CV5Cko4TiEm9mB1XGAteMD6tqxo5ah75IraPUgDrJtYlSgvJ\nnKFWUNPxUlg4JPbbeHLfuzmEcboWibEG9p7cTv3206arzZdZxxUbdwnHAoGBANqy\nFDm8Yo106qhJP27AAJHo8+NBNwLSAuY3HoZfsXK4nT2SDqtXySCkdIwO0iEH5s56\n4oT62Vd+qOP7TrcKlB9+daQNudJoPYyvvMFrZtLJn6niBxWhakv55Mgir+f/9L8P\nmBNgmtWwvJgrwmvjB++bndTzqzsttOlAvaRPSFqNAoGAWBkOgmqkIjjSZQqPrh4G\nKthtZwxyrQDu2ZdMmtRPuWUgpyMtIe04K8MSVqxaspVjhSmXgs0cGYLClm6KcB2m\nd10ie6f4W0LpI/V0jQC/kDNZMUCq81xalY6vZQYGJzDpCIvpIpvqOMHovpxh25n1\nQJWwZFD7vNg2rj+yQuzZvDUCgYEAkp7FlJfKcxApqr3A+11ahHhr2raETS3Dp9jY\nbDqH22QOd5MOpq1qOKpJQQVGt8J2aYRVjdYoFNLkJET+VxWOjTbZZC2XoYsliMbh\ng8Of4j4u/1R8b3ISs/FMAynOSXp++gFYcdVYuV+OcW8VIAPL9EaeoIDlEf3oxmET\nQ6+r0JkCgYAHdPaVJ1ElJjQAHUN9mm7V4RZgVaUdIrpFBtJ+lFSehHKwo1PRenyx\nbcwiHGOxJNGyrSBMtYuElDcp7rFRouelDoGDb0PLOR6SJ7HsGmx3JfmTgKEW8Izh\n4bbH3RdlNxB7UxjFRiRivPEuTiwrKCSMGQvEW5qwFTO+mf2rEyyzQA==\n-----END RSA PRIVATE KEY-----"
 
+
+######nginx-uwsgi###########
+default["ace"]["app_name"]                           = "ace"
+default["ace"]["deploy_to"]                          = "/opt/tennis-ace"
+default["ace"]["user"]                               = "ace"
+default["ace"]["group"]                              = "ace"
+default["ace"]["server_name"]                        = "local.tennis.com"
+default["ace"]["wsgi"]                               = "wsgi/live_local.py"
+default["ace"]["setting"]                            = "apps/settings_local.py"
+default["ace"]["socket"]                             = "127.0.0.1:8080"
+default["ace"]["virtualenv_path"]                    = "/opt/tennis-ace/shared/env"
+
+
+default["ace_admin"]["app_name"]                           = "ace_admin"
+default["ace_admin"]["wsgi"]                               = "wsgi/admin.py"
+default["ace_admin"]["server_name"]                        = "ace.local.tennis.com"
+default["ace_admin"]["socket"]                             = "127.0.0.1:9090"
+# Application uWSGI Settings
+default["ace"]["uswgi"]["num_processes"]              = 1
+override["uwsgi"]["version"]                        = "1.4.4"

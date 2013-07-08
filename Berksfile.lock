@@ -1,5 +1,5 @@
 {
-  "sha": "8b504df91b628ae1713ce76247ef4e9954a21961",
+  "sha": "f18b67577ce5a4f8f781c2b7c9c6c8473acd68e4",
   "sources": {
     "tennis-mysql": {
       "locked_version": "0.1.0",
@@ -15,7 +15,8 @@
       "path": "."
     },
     "mysql": {
-      "locked_version": "3.0.0"
+      "locked_version": "3.0.0",
+      "constraint": "= 3.0.0"
     },
     "openssl": {
       "locked_version": "1.0.2"
@@ -24,16 +25,20 @@
       "locked_version": "1.4.0"
     },
     "hostsfile": {
-      "locked_version": "1.0.1"
+      "locked_version": "1.0.1",
+      "constraint": "= 1.0.1"
     },
     "apt": {
-      "locked_version": "1.9.2"
+      "locked_version": "1.9.2",
+      "constraint": "= 1.9.2"
     },
     "application": {
-      "locked_version": "2.0.2"
+      "locked_version": "2.0.2",
+      "constraint": "= 2.0.2"
     },
     "application_python": {
-      "locked_version": "1.2.2"
+      "locked_version": "1.2.2",
+      "constraint": "= 1.2.2"
     },
     "python": {
       "locked_version": "1.3.4"
@@ -48,16 +53,28 @@
       "locked_version": "0.4.2"
     },
     "database": {
-      "locked_version": "1.4.0"
+      "locked_version": "1.4.0",
+      "constraint": "= 1.4.0"
     },
     "postgresql": {
-      "locked_version": "3.0.2"
+      "locked_version": "3.0.2",
+      "constraint": ">= 1.0.0"
     },
     "aws": {
       "locked_version": "0.101.2"
     },
     "xfs": {
       "locked_version": "1.1.0"
+    },
+    "nginx": {
+      "locked_version": "1.7.0"
+    },
+    "runit": {
+      "locked_version": "1.1.6"
+    },
+    "ohai": {
+      "locked_version": "1.1.10",
+      "constraint": ">= 1.1.4"
     }
   }
 }
