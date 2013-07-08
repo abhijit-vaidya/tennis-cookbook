@@ -68,6 +68,6 @@ github_deploy_key node["tennis"]["static"]["user"] do
   password "suite340"
 end
 
-#include_recipe "tennis-ace::db"
-#include_recipe "tennis-ace::deploy"
+include_recipe "tennis-ace::db"
+include_recipe "tennis-ace::deploy"
 include_recipe "tennis-ace::static"
