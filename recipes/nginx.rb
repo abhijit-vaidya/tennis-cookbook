@@ -52,3 +52,24 @@ link "/etc/nginx/sites-enabled/#{node["ace_admin"]["app_name"]}" do
   group "root"
   action :create
 end
+
+# Template for the Ace static website
+
+template "/etc/nginx/sites-available/#{node["ace_static"]["app_name"]}" do
+  source "ace_static.erb"
+  owner "root"
+  group "root"
+  mode 00644
+  variables(
+    :app_name       => node["ace_static"]["app_name"],
+    :server_name    => node["ace_static"]["server_name"]
+  )
+  action :create
+end
+
+link "/etc/nginx/sites-enabled/#{node["ace_static"]["app_name"]}" do
+  to "/etc/nginx/sites-available/#{node["ace_static"]["app_name"]}"
+  owner "root"
+  group "root"
+  action :create
+end

@@ -60,6 +60,10 @@ default["ace_admin"]["app_name"]                           = "ace_admin"
 default["ace_admin"]["wsgi"]                               = "wsgi/admin.py"
 default["ace_admin"]["server_name"]                        = "ace.local.tennis.com"
 default["ace_admin"]["socket"]                             = "127.0.0.1:9090"
+
+default["ace_static"]["server_name"]                       = "static.local.tennis.com"
+default["ace_static"]["app_name"]                           = "ace_static"
+
 # Application uWSGI Settings
 default["ace"]["uswgi"]["num_processes"]              = 1
 override["uwsgi"]["version"]                        = "1.4.4"
