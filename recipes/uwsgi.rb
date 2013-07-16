@@ -15,8 +15,5 @@ end
 
 python_pip "uwsgi" do
   action :install
-<<<<<<< HEAD
-=======
   version node["uwsgi"]["version"]
->>>>>>> 226dcaef3d7a72a9c1c6126b1693f0529f730ce5
 end

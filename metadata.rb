@@ -17,10 +17,7 @@ depends 'database',             '= 1.4.0'
 depends 'github'
 depends 'nginx'
 depends 'supervisor',           '= 0.4.0'
-<<<<<<< HEAD
 depends 'php'
 depends 'rabbitmq'
 depends 'memcached'
 
-=======
->>>>>>> 226dcaef3d7a72a9c1c6126b1693f0529f730ce5
