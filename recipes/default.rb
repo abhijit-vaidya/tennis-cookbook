@@ -1,4 +1,3 @@
-#
 # Cookbook Name:: tennis-ace
 # Recipe:: default
 #
@@ -52,10 +51,35 @@ hostsfile_entry "127.0.0.1" do
   action    :create_if_missing
 end
 
+<<<<<<< HEAD
+=======
+# Set virtualenv path
+node.set["tennis"]["ace"]["virtualenv_path"] = ::File.join(node["tennis"]["ace"]["deploy_to"], "shared", "env")
+>>>>>>> 226dcaef3d7a72a9c1c6126b1693f0529f730ce5
 
 # Create App user
 user node["tennis"]["ace"]["user"] do
   home "/home/#{node["tennis"]["ace"]["user"]}"
+<<<<<<< HEAD
+=======
+  supports :manage_home=>true
+  shell "/bin/bash"
+  system true
+end
+
+# Set App users's deploy key
+github_deploy_key node["tennis"]["ace"]["user"] do
+  username "zg-tennis-bot"
+  email "aduro@zehnergroup.com"
+  password "suite340"
+end
+# Set virtualenv path
+node.set["tennis"]["static"]["virtualenv_path"] = ::File.join(node["tennis"]["ace"]["deploy_to"], "shared", "env")
+
+# Create App user
+user node["tennis"]["static"]["user"] do
+  home "/home/#{node["tennis"]["static"]["user"]}"
+>>>>>>> 226dcaef3d7a72a9c1c6126b1693f0529f730ce5
   supports :manage_home=>true
   shell "/bin/bash"
   system true
@@ -70,6 +94,7 @@ end
 
 include_recipe "tennis-ace::db"
 include_recipe "tennis-ace::static"
+<<<<<<< HEAD
 include_recipe "tennis-ace::deploy"
 include_recipe "tennis-ace::uwsgi"
 include_recipe "tennis-ace::supervisor"
@@ -77,3 +102,8 @@ include_recipe "tennis-ace::enetpulse"
 include_recipe "tennis-ace::php-fpm"
 include_recipe "tennis-ace::nginx"
 
+=======
+include_recipe "tennis-ace::uwsgi"
+include_recipe "tennis-ace::supervisor"
+include_recipe "tennis-ace::nginx"
+>>>>>>> 226dcaef3d7a72a9c1c6126b1693f0529f730ce5
