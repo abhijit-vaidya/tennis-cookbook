@@ -42,17 +42,7 @@ application node["tennis"]["ace"]["app_name"] do
     CMD
   end
 
-  symlinks "uploads" => "uploads"
+  symlink_before_migrate "uploads" => "uploads"
 
-  action :force_deploy
+  action :deploy
 end
-
-# # Restart App
-# supervisor_service node[:tennis][:app_name] do
-#   action :restart
-# end
-#
-# # Restart Nginx
-# service "nginx" do
-#   action :restart
-# end

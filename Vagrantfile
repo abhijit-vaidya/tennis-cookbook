@@ -14,12 +14,12 @@ Vagrant.configure("2") do |config|
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box"
-
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
-  config.vm.network :private_network, ip: "192.168.1.18"
+  config.vm.network :private_network, ip: "192.168.121.10"
+  config.vm.network :forwarded_port, guest: 80, host: 8080
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -45,7 +45,6 @@ Vagrant.configure("2") do |config|
     # Use VBoxManage to customize the VM. For example to change memory:
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
-
   # View the documentation for the provider you're using for more
   # information on available options.
 
@@ -68,7 +67,7 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
 
   # Enable the Chef Omnibus plugin
-  #config.omnibus.chef_version = "11.4.4"
+  config.omnibus.chef_version = "11.4.4"
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
