@@ -1,0 +1,21 @@
+upstream <%= @app_name %> {
+  server unix:<%= @socket_file.nil? ? "/tmp/#{@app_name}.sock" : @socket_file %>;
+}
+
+# Main confguration
+server {
+  listen      80;
+  server_name <%= @server_name %>;
+  charset     utf-8;
+
+  client_max_body_size 75M;
+
+
+  access_log access-log-<%= @app_name %>.log;
+  error_log  error-log-<%= @app_name %>.log;
+
+    location / {
+    uwsgi_pass  <%= @app_name %>;
+    include     /etc/nginx/uwsgi_params;
+  }
+}

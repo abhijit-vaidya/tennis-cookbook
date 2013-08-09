@@ -1,0 +1,21 @@
+import os
+APPS_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<%= @db['name'] %>',
+        'USER': '<%= @db['user'] %>',
+        'PASSWORD': '<%= @db['pass'] %>',
+        'HOST': '<%= @db['host'] %>',
+        'PORT': '',
+        'OPTIONS': {'init_command':'SET storage_engine=INNODB'},
+            },
+
+    }
+
+<% if @log_dir %>
+LOG_DIR = '<%= @log_dir %>'
+<% end %>
+
+#LOCAL_CONF = os.environ['LOCAL_CONF']

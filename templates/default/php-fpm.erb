@@ -1,0 +1,26 @@
+[<%= @server_name %>]
+
+listen = /var/run/php5-fpm/<%= @server_name %>.socket
+listen.backlog = -1
+
+; Unix user/group of processes
+user = www-data
+group = www-data
+
+; Choose how the process manager will control the number of child processes.
+pm = dynamic
+pm.max_children = 10
+pm.start_servers = 5
+pm.min_spare_servers = 2
+pm.max_spare_servers = 5
+pm.max_requests = 500
+
+; Pass environment variables
+env[HOSTNAME] = $HOSTNAME
+env[PATH] = /usr/local/bin:/usr/bin:/bin
+env[TMP] = /tmp
+env[TMPDIR] = /tmp
+env[TEMP] = /tmp
+
+; host-specific php ini settings here
+; php_admin_value[open_basedir] = /var/www/DOMAINNAME/htdocs:/tmp
